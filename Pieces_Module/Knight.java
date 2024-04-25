@@ -18,4 +18,9 @@ public class Knight extends Piece {
         int yDiff = Math.abs(destY - y);
         return xDiff * yDiff == 2;
     }
+
+    @Override
+    public String getSymbol() {
+        return isWhite ? "N" : "n"; // Example for the Queen
+    }
 }

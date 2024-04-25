@@ -35,4 +35,6 @@ public abstract class Piece {
 
     // Abstract method for specific movement rules
     public abstract boolean canMove(int destX, int destY, Piece[][] board);
+
+    public abstract String getSymbol();
 }

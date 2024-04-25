@@ -18,4 +18,9 @@ public class King extends Piece {
         //Check if the King moves only one square in any direction
         return xDiff <= 1 && yDiff <= 1;
     }
+
+    @Override
+    public String getSymbol() {
+        return isWhite ? "K" : "k"; // Example for the Queen
+    }
 }

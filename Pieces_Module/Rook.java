@@ -1,7 +1,7 @@
 package Pieces_Module;
 
-public class Queen extends Piece {
-    public Queen(int x, int y, boolean isWhite){
+public class Rook extends Piece{
+    public Rook(int x, int y, boolean isWhite){
         super(x, y, isWhite);
     }
 
@@ -12,11 +12,11 @@ public class Queen extends Piece {
         }
 
         //Queen specific movement validation
-        int xDiff = Math.abs(destX - x);
-        int yDiff = Math.abs(destY - y);
+        /*int xDiff = Math.abs(destX - x);
+        int yDiff = Math.abs(destY - y);*/
 
         //Check if the move is along a column, row, or diagonal
-        if(x == destX || y == destY || xDiff == yDiff) {
+        if(x == destX || y == destY) {
             //Check is the path destination is clear
             return isPathClear(x, y, destX, destY, board);
         }
@@ -43,6 +43,6 @@ public class Queen extends Piece {
 
     @Override
     public String getSymbol() {
-        return isWhite ? "Q" : "q"; // Example for the Queen
+        return isWhite ? "R" : "r"; // Example for the Queen
     }
 }

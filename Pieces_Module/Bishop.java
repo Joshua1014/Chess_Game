@@ -1,23 +1,22 @@
 package Pieces_Module;
 
-public class Queen extends Piece {
-    public Queen(int x, int y, boolean isWhite){
+public class Bishop extends Piece {
+    public Bishop(int x, int y, boolean isWhite) {
         super(x, y, isWhite);
     }
 
     @Override
     public boolean canMove(int destX, int destY, Piece[][] board) {
-        if(!validMove(destX, destY, board)) {
+        if (!validMove(destX, destY, board)) {
             return false;
         }
 
-        //Queen specific movement validation
         int xDiff = Math.abs(destX - x);
         int yDiff = Math.abs(destY - y);
 
-        //Check if the move is along a column, row, or diagonal
-        if(x == destX || y == destY || xDiff == yDiff) {
-            //Check is the path destination is clear
+        // Confirm diagonal movement by the Bishop
+        if (xDiff == yDiff) {
+            // Check is the path destination is clear
             return isPathClear(x, y, destX, destY, board);
         }
 
@@ -27,10 +26,10 @@ public class Queen extends Piece {
     private boolean isPathClear(int startX, int startY, int destX, int destY, Piece[][] board) {
         int xStep = Integer.compare(destX, startX); // Determine the step direction for x
         int yStep = Integer.compare(destY, startY); // Determine the step direction for y
-    
+
         int currentX = startX + xStep;
         int currentY = startY + yStep;
-    
+
         while (currentX != destX || currentY != destY) {
             if (board[currentX][currentY] != null) {
                 return false; // Path is blocked
@@ -43,6 +42,7 @@ public class Queen extends Piece {
 
     @Override
     public String getSymbol() {
-        return isWhite ? "Q" : "q"; // Example for the Queen
+        return isWhite ? "B" : "b"; // Example for the Queen
     }
+
 }
