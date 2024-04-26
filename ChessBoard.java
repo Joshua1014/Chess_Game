@@ -6,7 +6,7 @@ public class ChessBoard {
      * represent the board and allow Piece objects to
      * be placed within it
      */
-    private Piece[][] board;
+    public Piece[][] board;
 
     // Constructor
     public ChessBoard() {
@@ -25,8 +25,8 @@ public class ChessBoard {
         // Placing rooks
         board[0][0] = new Rook(0, 0, false); // Black Rook
         board[0][7] = new Rook(0, 7, false); // Black Rook
-        board[7][0] = new Rook(7, 0, false); // White Rook
-        board[7][7] = new Rook(7, 7, false); // White Rook
+        board[7][0] = new Rook(7, 0, true); // White Rook
+        board[7][7] = new Rook(7, 7, true); // White Rook
 
         // Placing knights
         board[0][1] = new Pieces_Module.Knight(0, 1, false);
@@ -57,6 +57,26 @@ public class ChessBoard {
                     System.out.print(". ");
                 } else {
                     System.out.print(board[i][j].getSymbol() + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void movePiece(String piece, int destX, int destY, Piece[][] board) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (board[i][j] != null) {
+                    if (piece.equals(board[i][j].getSymbol())) {
+                        if (board[i][j].validMove(destX, destY, board)) {
+                            board[destY][destX] = board[i][j];
+                            board[i][j] = null;
+                        } else {
+                            System.out.print("This is no a valid move");
+                        }
+                    } else {
+                        System.out.print("This is no a valid move");
+                    }
                 }
             }
             System.out.println();
