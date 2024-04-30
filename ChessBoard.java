@@ -11,7 +11,7 @@ public class ChessBoard {
     // Constructor
     public ChessBoard() {
         // Creates a 8x8 2D array of Piece objects
-        this.board = new Piece[8][8];
+        this.board = new Piece[9][9];
         placePieces();
     }
 
@@ -69,13 +69,15 @@ public class ChessBoard {
                 if (board[i][j] != null) {
                     if (piece.equals(board[i][j].getSymbol())) {
                         if (board[i][j].validMove(destX, destY, board)) {
-                            board[destY][destX] = board[i][j];
+                            board[destX][destY] = board[i][j];
                             board[i][j] = null;
+                            break;
                         } else {
-                            System.out.print("This is no a valid move");
+                            System.out.print("This is not a valid move");
+                            continue;
                         }
                     } else {
-                        System.out.print("This is no a valid move");
+                        continue;
                     }
                 }
             }
