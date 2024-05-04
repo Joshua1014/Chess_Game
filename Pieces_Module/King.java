@@ -1,8 +1,8 @@
 package Pieces_Module;
 
 public class King extends Piece {
-    public King(int x, int y, boolean isWhite){
-        super(x, y, isWhite);
+    public King(int x, int y, boolean isWhite, String name){
+        super(x, y, isWhite, name);
     }
 
     @Override

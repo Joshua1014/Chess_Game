@@ -23,30 +23,30 @@ public class ChessBoard {
         }
 
         // Placing rooks
-        board[0][0] = new Rook(0, 0, false); // Black Rook
-        board[0][7] = new Rook(0, 7, false); // Black Rook
-        board[7][0] = new Rook(7, 0, true); // White Rook
-        board[7][7] = new Rook(7, 7, true); // White Rook
+        board[0][0] = new Rook(0, 0, false, "r1"); // Black Rook
+        board[0][7] = new Rook(0, 7, false, "r2"); // Black Rook
+        board[7][0] = new Rook(7, 0, true, "R1"); // White Rook
+        board[7][7] = new Rook(7, 7, true, "R2"); // White Rook
 
         // Placing knights
-        board[0][1] = new Pieces_Module.Knight(0, 1, false);
-        board[0][6] = new Pieces_Module.Knight(0, 6, false);
-        board[7][1] = new Pieces_Module.Knight(7, 1, true);
-        board[7][6] = new Pieces_Module.Knight(7, 6, true);
+        board[0][1] = new Pieces_Module.Knight(0, 1, false, "n1");
+        board[0][6] = new Pieces_Module.Knight(0, 6, false, "n2");
+        board[7][1] = new Pieces_Module.Knight(7, 1, true, "N1");
+        board[7][6] = new Pieces_Module.Knight(7, 6, true, "N2");
 
         // Placing bishops
-        board[0][2] = new Pieces_Module.Bishop(0, 2, false);
-        board[0][5] = new Pieces_Module.Bishop(0, 5, false);
-        board[7][2] = new Pieces_Module.Bishop(7, 2, true);
-        board[7][5] = new Pieces_Module.Bishop(7, 5, true);
+        board[0][2] = new Pieces_Module.Bishop(0, 2, false, "b1");
+        board[0][5] = new Pieces_Module.Bishop(0, 5, false, "b2");
+        board[7][2] = new Pieces_Module.Bishop(7, 2, true, "B1");
+        board[7][5] = new Pieces_Module.Bishop(7, 5, true, "B2");
 
         // Placing queens
-        board[0][3] = new Pieces_Module.Queen(0, 3, false);
-        board[7][3] = new Pieces_Module.Queen(7, 3, true);
+        board[0][3] = new Pieces_Module.Queen(0, 3, false, "q");
+        board[7][3] = new Pieces_Module.Queen(7, 3, true, "Q");
 
         // Placing kings
-        board[0][4] = new Pieces_Module.King(0, 4, false);
-        board[7][4] = new Pieces_Module.King(7, 4, true);
+        board[0][4] = new Pieces_Module.King(0, 4, false, "k");
+        board[7][4] = new Pieces_Module.King(7, 4, true, "K");
     }
 
     // Prints out the board to the console
@@ -68,7 +68,7 @@ public class ChessBoard {
             for (int j = 0; j < 8; j++) {
                 if (board[i][j] != null) {
                     if (piece.equals(board[i][j].getSymbol())) {
-                        if (board[i][j].validMove(destX, destY, board)) {
+                        if (board[i][j].canMove(destX, destY, board)) {
                             board[destX][destY] = board[i][j];
                             board[i][j] = null;
                             break;

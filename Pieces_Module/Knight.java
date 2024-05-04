@@ -1,8 +1,9 @@
 package Pieces_Module;
+
 public class Knight extends Piece {
 
-    public Knight(int x, int y, boolean isWhite){
-        super(x, y, isWhite);
+    public Knight(int x, int y, boolean isWhite, String name) {
+        super(x, y, isWhite, name);
     }
 
     @Override
@@ -15,9 +16,17 @@ public class Knight extends Piece {
 
         if(destX == x + 2 && destY == y + 1) {
             return true;
-        }else if(destX == x + 1 && destY == y + 2) {
+        }else if(destX == x + 2 && destY == y - 1) {
+            return true;
+        }else if(destX == x - 2 && destY == y + 1) {
             return true;
         }else if(destX == x - 2 && destY == y - 1) {
+            return true;
+        }else if(destX == x + 1 && destY == y + 2) {
+            return true;
+        }else if(destX == x + 1 && destY == y - 2) {
+            return true;
+        }else if(destX == x - 1 && destY == y + 2) {
             return true;
         }else if(destX == x - 1 && destY == y - 2) {
             return true;

@@ -3,12 +3,14 @@ public abstract class Piece {
     protected int x;
     protected int y;
     protected boolean isWhite;
+    protected String name;
 
     //Default constructor for Piece class
-    public Piece(int x, int y, boolean isWhite) {
+    public Piece(int x, int y, boolean isWhite, String name) {
         this.x = x;
         this.y = y;
         this.isWhite = isWhite;
+        this.name = name;
     }
 
     public boolean validMove(int destX, int destY, Piece[][] board) {
