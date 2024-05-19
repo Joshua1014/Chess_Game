@@ -42,7 +42,7 @@ public class Bishop extends Piece {
 
     @Override
     public String getSymbol() {
-        return isWhite ? "B" : "b"; // Example for the Queen
+        return name;
     }
 
 }

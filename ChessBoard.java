@@ -18,8 +18,8 @@ public class ChessBoard {
     private void placePieces() {
         // Placing pawns
         for (int i = 0; i < 8; i++) {
-            board[1][i] = new Pawn(1, i, false); // Black pawns
-            board[6][i] = new Pawn(6, i, true); // White pawns
+            board[1][i] = new Pawn(1, i, false, "p" + i); // Black pawns
+            board[6][i] = new Pawn(6, i, true, "P" + i); // White pawns
         }
 
         // Placing rooks
@@ -54,7 +54,7 @@ public class ChessBoard {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (board[i][j] == null) {
-                    System.out.print(". ");
+                    System.out.print(" . ");
                 } else {
                     System.out.print(board[i][j].getSymbol() + " ");
                 }

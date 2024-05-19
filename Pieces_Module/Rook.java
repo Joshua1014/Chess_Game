@@ -43,6 +43,6 @@ public class Rook extends Piece{
 
     @Override
     public String getSymbol() {
-        return isWhite ? "R" : "r"; // Example for the Queen
+        return name;
     }
 }

@@ -21,6 +21,6 @@ public class King extends Piece {
 
     @Override
     public String getSymbol() {
-        return isWhite ? "K" : "k"; // Example for the Queen
+        return name;
     }
 }

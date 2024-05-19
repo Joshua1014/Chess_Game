@@ -42,6 +42,6 @@ public class Knight extends Piece {
 
     @Override
     public String getSymbol() {
-        return isWhite ? "N" : "n"; // Example for the Queen
+        return name;
     }
 }
