@@ -11,7 +11,7 @@ public class ChessBoard {
     // Constructor
     public ChessBoard() {
         // Creates a 8x8 2D array of Piece objects
-        this.board = new Piece[9][9];
+        this.board = new Piece[8][8];
         placePieces();
     }
 
