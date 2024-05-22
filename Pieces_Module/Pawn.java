@@ -7,8 +7,8 @@ public class Pawn extends Piece {
 
     @Override
     public boolean canMove(int destX, int destY, Piece[][] board) {
-        int forwardDirection = isWhite ? 1 : -1; // Determines the direction the pawn moves; 1 for white (up), -1 for black (down)
-        int startRow = isWhite ? 1 : 6;  // Starting row depends on the color
+        int forwardDirection = isWhite ? -1 : 1; // Determines the direction the pawn moves; 1 for white (up), -1 for black (down)
+        int startRow = isWhite ? 6 : 1;  // Starting row depends on the color
 
         // Simple one square forward move
         if (destX == x + forwardDirection && destY == y && board[destX][destY] == null) {
