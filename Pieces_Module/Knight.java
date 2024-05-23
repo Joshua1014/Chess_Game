@@ -15,20 +15,36 @@ public class Knight extends Piece {
         }
 
         if(destX == x + 2 && destY == y + 1) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x + 2 && destY == y - 1) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x - 2 && destY == y + 1) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x - 2 && destY == y - 1) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x + 1 && destY == y + 2) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x + 1 && destY == y - 2) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x - 1 && destY == y + 2) {
+            x = destX;
+            y = destY;
             return true;
         }else if(destX == x - 1 && destY == y - 2) {
+            x = destX;
+            y = destY;
             return true;
         }else {
             return false;
